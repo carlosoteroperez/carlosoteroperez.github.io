@@ -34,3 +34,23 @@ identifier = "contacto"
 name = "Contacto"
 url = "/contacto/"
 weight = 40
+
+# Configuración del Pie de Página
+copyright = "© 2026 Carlos G. Otero. Todos los derechos reservados."
+
+# Iconos Sociales (Sin enlace definitivo)
+[[params.socialIcons]]
+name = "tumblr"
+url = "#"
+
+[[params.socialIcons]]
+name = "instagram"
+url = "#"
+
+[[params.socialIcons]]
+name = "facebook"
+url = "#"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "#"
