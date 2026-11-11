@@ -1,64 +1,115 @@
 <!DOCTYPE html>
-<html lang="{{ site.LanguageCode | default "en" }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="es" dir="auto">
 <head>
     {{- partial "head.html" . -}}
+    <link rel="stylesheet" href="/css/howey-override.css">
+    <!-- Íconos de FontAwesome para las redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}{{- print "list" -}}{{- end -}}{{- if eq site.Params.defaultTheme `dark` -}}{{- print " dark" -}}{{- end -}}" id="top">
-    <script>
-        if (localStorage.getItem("pref-theme") === "dark") {
-            document.body.classList.add('dark');
-        } else if (localStorage.getItem("pref-theme") === "light") {
-            document.body.classList.remove('dark')
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
-        }
-    </script>
-    
-    <!-- BARRA DE NAVEGACIÓN NATIVA -->
-    {{- partial "header.html" . -}}
+<body class="howey-theme">
 
-    <!-- INYECCIÓN: BANNER GLOBAL HUGH HOWEY -->
-    <div class="howey-header">
-        <img src="/portada-universo-caliche.png" alt="Banner Global Universo Caliche">
+    <!-- HEADER ESTILO HOWEY (Menú Superior Negro) -->
+    <header class="howey-navbar">
+        <div class="navbar-container">
+            <nav class="nav-links">
+                <a href="/about/">ABOUT</a>
+                <a href="/books/">BOOKS</a>
+                <a href="/neo/">NEO</a>
+                <a href="/contact/">CONTACT</a>
+            </nav>
+            <div class="logo-container">
+                <a href="/"><img src="/logo.png" alt="Carlos G. Otero Logo" class="center-logo"></a>
+            </div>
+            <div class="social-links-top">
+                <a href="#" class="social-circle"><i class="fab fa-tumblr"></i></a>
+                <a href="#" class="social-circle"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-circle"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER GLOBAL (Ancho completo) -->
+    <div class="howey-hero-banner">
+        <img src="/portada-universo-caliche.png" alt="Banner Universo Caliche">
     </div>
 
-    <!-- INYECCIÓN: ESTRUCTURA GRID -->
-    <div class="howey-container">
-        <!-- COLUMNA 1: CONTENIDO PRINCIPAL -->
-        <main class="main">
+    <!-- CONTENEDOR PRINCIPAL (2 Columnas) -->
+    <div class="howey-main-grid">
+        <main class="content-column">
             {{- block "main" . }}{{- end }}
         </main>
-
-        <!-- COLUMNA 2: BARRA LATERAL (SIDEBAR) -->
-        <aside class="howey-sidebar">
-            <div class="sidebar-widget">
-                <h3>Carlos G. Otero</h3>
-                <img src="/logo.png" alt="Avatar Carlos Otero" style="width:120px; border-radius:50%; margin: 0 auto 15px; display:block;">
-                <p style="font-size: 0.9rem; line-height: 1.5; color: var(--primary);">Ingeniero de Sistemas, Abogado y Escritor. Creador del Universo Caliche y desarrollador LegalTech.</p>
+        
+        <!-- BARRA LATERAL DERECHA (Sidebar) -->
+        <aside class="sidebar-column">
+            <div class="widget">
+                <h3>Writing Insights Series</h3>
+                <ul>
+                    <li><a href="#">Becoming a Writer</a></li>
+                    <li><a href="#">The Rough Draft</a></li>
+                    <li><a href="#">The Revision Process</a></li>
+                    <li><a href="#">Publishing Your Book</a></li>
+                </ul>
             </div>
-            <div class="sidebar-widget">
-                <h3>Explorar</h3>
-                <ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 2;">
-                    <li><a href="/libros/" style="color: var(--primary); text-decoration: none;">► Libros y Obras</a></li>
-                    <li><a href="/investigacion/" style="color: var(--primary); text-decoration: none;">► Investigación y Tech</a></li>
-                    <li><a href="/sobre-mi/" style="color: var(--primary); text-decoration: none;">► Biografía</a></li>
+            <div class="widget about-widget">
+                <h3>ABOUT ME</h3>
+                <img src="/logo.png" alt="Autor" class="sidebar-avatar">
+                <p>Ingeniero de Sistemas, Abogado y Autor. Creador del Universo Caliche y desarrollador de soluciones EdTech/LegalTech.</p>
+                <div class="social-sidebar">
+                    <a href="#"><i class="fab fa-tumblr"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>RECENT POSTS</h3>
+                <ul>
+                    <li><a href="#">Desarrollo de API para decisiones éticas en IA</a></li>
+                    <li><a href="#">Visión por Computador con OpenCV en aulas</a></li>
+                    <li><a href="#">Caliche: De las aulas a los estrados</a></li>
                 </ul>
             </div>
         </aside>
     </div>
 
-    <!-- INYECCIÓN: PIE DE PÁGINA GLOBAL (FOOTER) -->
-    <footer class="howey-footer">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-            <p>© 2026 Carlos Guillermo Otero Pérez. Todos los derechos reservados.</p>
-            <div style="margin-top: 20px; font-weight: bold;">
-                <!-- Placeholders con enlaces ancla. Reemplazaremos el '#' luego -->
-                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Tumblr</a> 
-                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Instagram</a> 
-                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Facebook</a> 
-                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">YouTube</a>
+    <!-- FOOTER ESTILO HOWEY (3 Columnas) -->
+    <footer class="howey-mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RECENT POSTS</h4>
+                <ul>
+                    <li><a href="#">Desarrollo de API para IA</a></li>
+                    <li><a href="#">Visión por Computador</a></li>
+                    <li><a href="#">El Universo Caliche</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Search this site">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>FOLLOW ME</h4>
+                <ul>
+                    <li><a href="#">Tumblr</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BLOG UPDATES</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Type your email...">
+                    <button>Subscribe</button>
+                </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>© 2026 <strong>Carlos G. Otero</strong> All Rights Reserved.</p>
+            <p class="credits">Designed with Hugo. Hosted by GitHub Pages.</p>
+        </div>
     </footer>
+
 </body>
 </html>

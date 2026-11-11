@@ -1,0 +1,122 @@
+/* Reset y Variables Base */
+:root {
+    --howey-black: #111111;
+    --howey-orange: #C65127;
+    --howey-text: #333333;
+    --howey-bg: #FFFFFF;
+    --howey-gray: #F8F8F8;
+}
+body.howey-theme {
+    margin: 0; padding: 0;
+    font-family: "Georgia", serif; /* Tipografía clásica para lectura */
+    background-color: var(--howey-bg);
+    color: var(--howey-text);
+}
+
+/* Navbar Superior */
+.howey-navbar {
+    background-color: var(--howey-black);
+    padding: 10px 0;
+    position: relative;
+}
+.navbar-container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px; position: relative;
+}
+.nav-links a {
+    color: white; text-decoration: none;
+    margin-right: 20px; font-family: "Arial", sans-serif;
+    font-size: 13px; font-weight: bold; letter-spacing: 1px;
+}
+.logo-container {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.center-logo {
+    width: 100px; height: 100px;
+    border-radius: 50%; border: 3px solid white;
+    background-color: var(--howey-black);
+    object-fit: cover;
+}
+.social-links-top .social-circle {
+    display: inline-flex; justify-content: center; align-items: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background-color: var(--howey-orange); color: white;
+    text-decoration: none; margin-left: 10px; font-size: 14px;
+}
+
+/* Hero Banner */
+.howey-hero-banner img {
+    width: 100%; max-height: 450px; object-fit: cover; display: block;
+}
+
+/* Grid Principal */
+.howey-main-grid {
+    max-width: 1100px; margin: 50px auto;
+    display: grid; grid-template-columns: 2.5fr 1fr;
+    gap: 60px; padding: 0 20px;
+}
+.content-column { line-height: 1.8; }
+
+/* Sidebar */
+.sidebar-column .widget { margin-bottom: 40px; }
+.sidebar-column h3 {
+    font-family: "Arial", sans-serif; font-size: 14px;
+    letter-spacing: 2px; text-transform: uppercase;
+    border-bottom: 1px solid #eee; padding-bottom: 10px;
+    margin-bottom: 20px; font-weight: normal;
+}
+.sidebar-column ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-column ul li { margin-bottom: 12px; }
+.sidebar-column ul a {
+    color: var(--howey-orange); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.sidebar-column ul a:hover { border-bottom: 1px solid var(--howey-orange); }
+.sidebar-avatar {
+    width: 150px; height: 150px; border-radius: 50%;
+    display: block; margin: 0 auto 20px; object-fit: cover;
+}
+.social-sidebar a {
+    color: var(--howey-orange); font-size: 20px;
+    margin-right: 15px; text-decoration: none;
+}
+
+/* Mega Footer */
+.howey-mega-footer {
+    border-top: 1px solid #eaeaea; padding: 60px 20px 20px;
+    margin-top: 60px; font-family: "Arial", sans-serif;
+}
+.footer-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+}
+.footer-col h4 {
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 25px; font-weight: normal;
+}
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 15px; }
+.footer-col a { color: var(--howey-orange); text-decoration: none; }
+
+/* Formularios (Búsqueda y Suscripción) */
+.search-box, .subscribe-box { display: flex; margin-top: 20px; }
+.search-box input, .subscribe-box input {
+    padding: 10px; border: 1px solid #ccc; width: 70%; font-size: 14px;
+}
+.search-box button, .subscribe-box button {
+    background-color: var(--howey-orange); color: white;
+    border: none; padding: 10px 15px; cursor: pointer; font-weight: bold;
+}
+
+.footer-bottom {
+    max-width: 1100px; margin: 60px auto 0;
+    display: flex; justify-content: space-between;
+    border-top: 1px solid #eaeaea; padding-top: 20px;
+    font-size: 13px; color: #666;
+}
+.credits a { color: var(--howey-orange); text-decoration: none; }
+
+/* Ocultar motor base PaperMod para evitar colisiones */
+.header, .footer, .entry-cover { display: none !important; }
