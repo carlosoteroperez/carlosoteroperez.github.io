@@ -16,7 +16,7 @@ body.howey-theme {
 /* Navbar Superior */
 .howey-navbar {
     background-color: var(--howey-black);
-    padding: 10px 0;
+    padding: 30px 0; /* CORRECCIÓN: Altura aumentada para igualar a la página fuente */
     position: relative;
 }
 .navbar-container {
@@ -35,7 +35,7 @@ body.howey-theme {
     z-index: 10;
 }
 .center-logo {
-    width: 100px; height: 100px;
+    width: 120px; height: 120px; /* CORRECCIÓN: Escala ajustada a la nueva altura de la barra */
     border-radius: 50%; border: 3px solid white;
     background-color: var(--howey-black);
     object-fit: cover;
@@ -47,15 +47,15 @@ body.howey-theme {
     text-decoration: none; margin-left: 10px; font-size: 14px;
 }
 
-/* CORRECCIÓN: Hero Banner Centrado y Restringido */
+/* Hero Banner Centrado y pegado a la barra negra */
 .howey-hero-banner {
-    max-width: 1100px; /* Obliga a la imagen a no ser más ancha que el texto */
-    margin: 30px auto 0; /* Centra el bloque matemáticamente */
+    max-width: 1100px;
+    margin: 0 auto; /* CORRECCIÓN: Margen 0 para eliminar la franja blanca */
     padding: 0 20px;
 }
 .howey-hero-banner img {
     width: 100%; 
-    height: auto; /* Mantiene la proporción original exacta de tu imagen */
+    height: auto;
     display: block;
 }
 
