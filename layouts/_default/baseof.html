@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "en" }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<head>
+    {{- partial "head.html" . -}}
+</head>
+<body class="{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}{{- print "list" -}}{{- end -}}{{- if eq site.Params.defaultTheme `dark` -}}{{- print " dark" -}}{{- end -}}" id="top">
+    <script>
+        if (localStorage.getItem("pref-theme") === "dark") {
+            document.body.classList.add('dark');
+        } else if (localStorage.getItem("pref-theme") === "light") {
+            document.body.classList.remove('dark')
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+    </script>
+    
+    <!-- BARRA DE NAVEGACIÓN NATIVA -->
+    {{- partial "header.html" . -}}
+
+    <!-- INYECCIÓN: BANNER GLOBAL HUGH HOWEY -->
+    <div class="howey-header">
+        <img src="/portada-universo-caliche.png" alt="Banner Global Universo Caliche">
+    </div>
+
+    <!-- INYECCIÓN: ESTRUCTURA GRID -->
+    <div class="howey-container">
+        <!-- COLUMNA 1: CONTENIDO PRINCIPAL -->
+        <main class="main">
+            {{- block "main" . }}{{- end }}
+        </main>
+
+        <!-- COLUMNA 2: BARRA LATERAL (SIDEBAR) -->
+        <aside class="howey-sidebar">
+            <div class="sidebar-widget">
+                <h3>Carlos G. Otero</h3>
+                <img src="/logo.png" alt="Avatar Carlos Otero" style="width:120px; border-radius:50%; margin: 0 auto 15px; display:block;">
+                <p style="font-size: 0.9rem; line-height: 1.5; color: var(--primary);">Ingeniero de Sistemas, Abogado y Escritor. Creador del Universo Caliche y desarrollador LegalTech.</p>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Explorar</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 2;">
+                    <li><a href="/libros/" style="color: var(--primary); text-decoration: none;">► Libros y Obras</a></li>
+                    <li><a href="/investigacion/" style="color: var(--primary); text-decoration: none;">► Investigación y Tech</a></li>
+                    <li><a href="/sobre-mi/" style="color: var(--primary); text-decoration: none;">► Biografía</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- INYECCIÓN: PIE DE PÁGINA GLOBAL (FOOTER) -->
+    <footer class="howey-footer">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <p>© 2026 Carlos Guillermo Otero Pérez. Todos los derechos reservados.</p>
+            <div style="margin-top: 20px; font-weight: bold;">
+                <!-- Placeholders con enlaces ancla. Reemplazaremos el '#' luego -->
+                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Tumblr</a> 
+                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Instagram</a> 
+                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">Facebook</a> 
+                <a href="#" style="margin: 0 15px; color: var(--primary); text-decoration: none;">YouTube</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
