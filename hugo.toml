@@ -1,0 +1,4 @@
+baseURL = 'https://carlosoteroperez.github.io/'
+languageCode = 'es-CO'
+title = 'Carlos G. Otero | Autor e Ingeniero'
+theme = 'PaperMod'
