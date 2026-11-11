@@ -8,7 +8,7 @@
 }
 body.howey-theme {
     margin: 0; padding: 0;
-    font-family: "Georgia", serif; /* Tipografía clásica para lectura */
+    font-family: "Georgia", serif;
     background-color: var(--howey-bg);
     color: var(--howey-text);
 }
@@ -47,9 +47,16 @@ body.howey-theme {
     text-decoration: none; margin-left: 10px; font-size: 14px;
 }
 
-/* Hero Banner */
+/* CORRECCIÓN: Hero Banner Centrado y Restringido */
+.howey-hero-banner {
+    max-width: 1100px; /* Obliga a la imagen a no ser más ancha que el texto */
+    margin: 30px auto 0; /* Centra el bloque matemáticamente */
+    padding: 0 20px;
+}
 .howey-hero-banner img {
-    width: 100%; max-height: 450px; object-fit: cover; display: block;
+    width: 100%; 
+    height: auto; /* Mantiene la proporción original exacta de tu imagen */
+    display: block;
 }
 
 /* Grid Principal */
@@ -100,7 +107,7 @@ body.howey-theme {
 .footer-col ul li { margin-bottom: 15px; }
 .footer-col a { color: var(--howey-orange); text-decoration: none; }
 
-/* Formularios (Búsqueda y Suscripción) */
+/* Formularios */
 .search-box, .subscribe-box { display: flex; margin-top: 20px; }
 .search-box input, .subscribe-box input {
     padding: 10px; border: 1px solid #ccc; width: 70%; font-size: 14px;
@@ -118,5 +125,5 @@ body.howey-theme {
 }
 .credits a { color: var(--howey-orange); text-decoration: none; }
 
-/* Ocultar motor base PaperMod para evitar colisiones */
+/* Ocultar nativos */
 .header, .footer, .entry-cover { display: none !important; }
