@@ -2,3 +2,35 @@ baseURL = 'https://carlosoteroperez.github.io/'
 languageCode = 'es-CO'
 title = 'Carlos G. Otero | Autor e Ingeniero'
 theme = 'PaperMod'
+
+[params]
+images = ["/cover.png"]
+
+[params.label]
+text = "Carlos G. Otero"
+icon = "/logo.png"
+iconHeight = 35
+
+[[menu.main]]
+identifier = "sobre-mi"
+name = "Sobre el Autor"
+url = "/sobre-mi/"
+weight = 10
+
+[[menu.main]]
+identifier = "libros"
+name = "Libros"
+url = "/libros/"
+weight = 20
+
+[[menu.main]]
+identifier = "investigacion"
+name = "Investigación"
+url = "/investigacion/"
+weight = 30
+
+[[menu.main]]
+identifier = "contacto"
+name = "Contacto"
+url = "/contacto/"
+weight = 40
